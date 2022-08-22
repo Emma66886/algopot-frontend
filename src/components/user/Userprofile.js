@@ -42,10 +42,13 @@ function Userprofile() {
                  </Box>
              </GridItem>
              <GridItem colSpan='2' placeItems='center' display='grid' h='53px' w='80%'  fontSize='1rem' fontWeight='500' lineHeight='27px' bg='#111621' borderRadius='4px'>View Submitted Token</GridItem>
-             <GridItem colSpan='2' placeItems='center' display='grid' h='53px' w='80%'  fontSize='1rem' fontWeight='500' lineHeight='27px' bg='#111621' borderRadius='4px' _hover={{color:'#000',bg:'#fff',cursor:'pointer'}}><Link to='/listnewtoken' as={Routerlink} >Submit Token</Link></GridItem>
+             <GridItem colSpan='2' placeItems='center' display='grid' h='53px' w='80%'  fontSize='1rem' fontWeight='500' lineHeight='27px' bg='#111621' borderRadius='4px' _hover={{color:'#000',bg:'#fff',cursor:'pointer'}}>
+                <Link to='/listnewtoken' as={Routerlink} >Submit Token</Link></GridItem>
              <GridItem colSpan='2' placeItems='center' display='grid' h='53px' w='80%'  fontSize='1rem' fontWeight='500' lineHeight='27px' bg='#111621' borderRadius='4px'>My watchlist</GridItem>
-             <GridItem colSpan='2' placeItems='center' display='grid' h='53px' w='80%'  fontSize='1rem' fontWeight='500' lineHeight='27px' bg='#111621' borderRadius='4px'>Account Subsciption</GridItem>
-             <GridItem colSpan='2' placeItems='center' display='grid' h='53px' w='80%'  fontSize='1rem' fontWeight='500' lineHeight='27px' bg='#111621' borderRadius='4px'>KYC</GridItem>
+             <GridItem colSpan='2' placeItems='center' display='grid' h='53px' w='80%'  fontSize='1rem' fontWeight='500' lineHeight='27px' bg='#111621' borderRadius='4px'>
+             <Link to='/accountsubscription' as={Routerlink} > Account Subsciption</Link></GridItem>
+             <GridItem colSpan='2' placeItems='center' display='grid' h='53px' w='80%'  fontSize='1rem' fontWeight='500' lineHeight='27px' bg='#111621' borderRadius='4px'>
+             <Link to='/kyc' as={Routerlink} >KYC</Link></GridItem>
              <GridItem colSpan='2' w='80%'>
                  <Grid templateColumns='repeat(2,1fr)' w='100%' gap={5}>
                  <GridItem  colSpan='1' mb='5'  placeItems='center' display='grid' h='53px'    fontSize='1rem' fontWeight='500' lineHeight='27px' bg='#111621' borderRadius='4px'>Change Username</GridItem>

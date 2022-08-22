@@ -1,15 +1,29 @@
-import React from "react";
+import React, { useEffect,useRef } from "react";
 import { SearchIcon } from '@chakra-ui/icons';
 import { Box, Button, Text, Input, InputGroup, InputRightElement, ButtonGroup} from '@chakra-ui/react';
 import Tokensaboutrepeater from "./tokensaboutrepeater";
 import { useMediaQuery } from '@chakra-ui/react';
 import Pagnation from "./pagnation";
+import axios from "axios";
 
 export default function RendersearchandReapeter(){
+    let stopUseEffect = useRef(false);
     const [isLargerThan700] = useMediaQuery('(min-width: 700px)')
     const pagnate = ()=>{
 
     }
+    const getAllCoins = async()=>{
+        const alltokens = await axios.get('/api/coins')
+        console.log(alltokens)
+        return alltokens;
+    }
+    useEffect(()=>{
+        if(stopUseEffect.current === false){
+            getAllCoins()
+            
+        }
+        stopUseEffect.current = true;
+    },[])
     return <>
     {isLargerThan700 && <Box gap={4} width='80%' bg='#E7E7E7' display='flex' borderRadius='5px' alignItems='center' justifyContent='center' mb={5}>
                     <Text fontSize='3rem' color='#45AC75' fontWeight={600}>TOKEN LIST</Text>

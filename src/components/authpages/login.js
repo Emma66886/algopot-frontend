@@ -50,7 +50,7 @@ const navigate = useNavigate()
         <Link ontWeight='500' fontFamily='Poppins' fontSize='16px' lineHeight='24px' color='#B0ADAD' width='80%' textAlign='right'>Forgot Password</Link>
         <Checkbox checked={keepmeIn} onChange={(e)=>{setKeepmeIn(e.target.checked)}} size='md' ontWeight='500' fontFamily='Poppins' fontSize='14px' lineHeight='21px' color='#B0ADAD' width='80%' textAlign='right'>Keep me signed in</Checkbox>
         <Text ontWeight='500' fontFamily='Poppins' fontSize='18px' lineHeight='27px' mt='5' mb='2' color='#B0ADAD' width='80%' textAlign='center'>Don{"'"}t have an account?</Text>
-        <Button onClick={loginrequest} disabled={loading} isLoading={loading} mb='5' bg='#45AC75' textAlign='center' w='50%' h='53px' borderRadius='4px' size='18px' lineHeight='27px' color='white' _hover={{color:'#000'}}>Register</Button>
+        <Button onClick={loginrequest} disabled={loading} isLoading={loading} mb='5' bg='#45AC75' textAlign='center' w='50%' h='53px' borderRadius='4px' size='18px' lineHeight='27px' color='white' _hover={{color:'#000'}}>LOGIN</Button>
     </Box>
   )
 }

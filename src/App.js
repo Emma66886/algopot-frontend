@@ -12,6 +12,8 @@ import Watchlist from './components/user/watchlist';
 import { useContext } from 'react';
 import { LoggedinContext } from './contexts/loginctx';
 import Listtokens from './components/user/listtoken';
+import Submitkyc from './components/user/kyc/submitkyc';
+import RenderSubmit from './components/user/tokensubscription/renderSubmit';
 function App() {
   const authCtx = useContext(LoggedinContext)
   return (<>
@@ -26,6 +28,8 @@ function App() {
         <Route exact path="/token" element={<Tokenpage />}/>
        {authCtx.loggedin && <Route exact path="/watchlist" element={<Watchlist />}/>}
        {authCtx.loggedin && <Route exact path="/listnewtoken" element={<Listtokens />}/>}
+       {authCtx.loggedin && <Route exact path="/kyc" element={<Submitkyc />}/>}
+       {authCtx.loggedin && <Route exact path="/accountsubscription" element={<RenderSubmit />}/>}
 
        <Route path='/*' element={<Homebody />}/>
       </Routes>

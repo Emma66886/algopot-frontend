@@ -3,7 +3,7 @@ import { Box, Button, Text, Input, InputGroup, InputRightElement, Grid, GridItem
 import { StarIcon,ArrowUpIcon,CheckCircleIcon } from '@chakra-ui/icons';
 import { useMediaQuery } from '@chakra-ui/react'
 
-export default function Tokensaboutrepeater(){
+export default function Tokensaboutrepeater({imgurl,token_name,token_symbol,description,algo_price,usd_price,change,active,votes}){
     const [isLargerThan700] = useMediaQuery('(min-width: 700px)')
     return  <>
     <Box w='100vw' h='max-content' display='flex' justifyContent='center' marginTop={10}>
