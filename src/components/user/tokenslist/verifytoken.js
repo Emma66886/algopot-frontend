@@ -17,9 +17,9 @@ function Verifytoken({set}) {
             setIsRequesting(true)
             try{
                 const submit = await axios({
-                    method:'PUT',
+                    method:'post',
                     url:'/api/coins/verfication',
-                    headers: {"Authorization": `Bearer ${auth}`},
+                    headers: {"Authorization": `Bearer ${auth},Content-Type: application/json`},
                     data:JSON.stringify({
                         email,
                         token_asa:tokenAsa,
@@ -34,6 +34,7 @@ function Verifytoken({set}) {
                 }
                 setIsRequesting(false)
             }catch(e){
+                console.log(e)
                 setIsRequesting(false)
                 setError(e?.response?.message || e.message || "An error occured." )
             }
@@ -42,8 +43,8 @@ function Verifytoken({set}) {
     <Box w='100vw'  minH='100vh' display='flex' justifyContent='center'  bg={'#0D0E12'}>
         <Box w={['80%','70%','60%']} display='flex' flexDir='column' gap='3' color='#fff'>
             <Text fontSize='1.5em' textAlign='center' fontWeight='bold' color='#45AC75' >VERIFY TOKEN</Text>
-            <label style={{color:'#fff', fontSize:'1.1em'}} onChange={e=>setEmail(e.target.value)}> Email
-                <Input bg='#fff' color='#000' type={'email'} placeholder='Valid Email'/>
+            <label style={{color:'#fff', fontSize:'1.1em'}} > Email
+                <Input bg='#fff' color='#000' type={'email'} onChange={e=>setEmail(e.target.value)} placeholder='Valid Email'/>
             </label>
             <label style={{color:'#fff', fontSize:'1.1em'}}> Token ASA
                 <Input bg='#fff' onChange={e=>setTokenAsa(e.target.value)} color='#000' placeholder='Token ASA'/>
@@ -73,6 +74,7 @@ function Verifytoken({set}) {
             </label>
             <Text color='#fff' fontSize='1.1em' >Make sure your token is 72 hours old</Text>
             <Button isLoading={requesting} bg='#45AC75' w='200px' alignSelf='center' _hover={{color:'#c7c7c7'}} onClick={submitForm}>NEXT</Button>
+            {error && <Text color='#ff0000'>{error}</Text>}
         </Box>
     </Box>
   )

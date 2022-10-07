@@ -25,20 +25,7 @@ const navigate = useNavigate()
     if(password === '' || confirmPass==='' ) return setError('Password or Confirm password cannot be empty'); else setError('');
     if(password != confirmPass ) return setError('Password not equal to confirm password'); else setError('');
     setRequestload(true)
-    //  axios(`/api/auth/register`,{
-    //   headers:{'Content-Type': 'application/json'},
-    //  data:{ "firstname": firstname,
-    //   "username": userName, 
-    //   "password": password,
-    //   "confirm_password": confirmPass,
-    //   "email": email}
-    // }).then((result)=>{
-    //   console.log(result)
-    //   setRequestload(false)
-    // }).catch((e)=>{
-    //   setRequestload(false)
-    //     console.log(e);
-    // })
+
     axios({
       method: 'post',
       url: '/api/auth/register',
